@@ -5,6 +5,7 @@ import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { addUser, removeUser } from '../utils/userSlice';
+import { toggleGptComp } from '../utils/gptSlice';
 
 const Header = () => {
     const navigate = useNavigate();
@@ -36,10 +37,14 @@ const Header = () => {
                 // eslint-disable-next-line
         },[])
 
+        const handleGPT = ()=>{
+          dispatch(toggleGptComp());
+        }
+
   return (
-    <div className='absolute bg-gradient-to-b from-black w-full z-10 flex justify-between items-center px-10'>
-        <img src={logo} alt='logo' className='w-44'/>
-        {user &&  <div className='text-white flex items-center font-bold'><p className='mr-3'>{user.displayName} </p><button className='bg-red-500 px-4 py-2 rounded-lg' onClick={handleSignOut}>Sign Out</button></div>}
+    <div className='absolute bg-gradient-to-b from-black w-full z-10 flex justify-between items-center md:px-10 px-1 md:pt-1 pt-2'>
+        <img src={logo} alt='logo' className='md:w-44 w-20'/>
+        {user &&  <div className='text-white flex items-center font-bold'><button onClick={handleGPT} className='bg-red-500 md:px-4 px-2 md:py-2 py-1 rounded-lg'>GPT Search</button> <p className='mx-3'>{user.displayName} </p><button className='bg-red-500 md:px-4 px-2 md:py-2 py-1 rounded-lg' onClick={handleSignOut}>Sign Out</button></div>}
     </div>
   )
 }

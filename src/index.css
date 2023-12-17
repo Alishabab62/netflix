@@ -1,3 +1,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.no-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: transparent transparent;
+    overflow: -moz-scrollbars-none;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar {
+    width: 0.5em;
+  }
+  
+  .no-scrollbar::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
