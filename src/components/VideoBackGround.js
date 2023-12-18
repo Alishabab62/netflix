@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 const VideoBackGround = ({ id }) => {
     useGetTrailer(id);
     const data = useSelector((store) => store.movies?.trailerMovie);
+    
     return (
       <div className="w-full md:h-[550px] h-[250px]">
         <iframe
