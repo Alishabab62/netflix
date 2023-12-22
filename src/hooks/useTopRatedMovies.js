@@ -7,9 +7,13 @@ import {  addTopRatedMovie } from "../utils/moviesSlice";
 const useTopRatedMovies = () =>{
     const dispatch = useDispatch();
     const getTopRatedMovies = async () =>{
-        const data = await fetch(TOP_RATED_MOVIES,options);
-        const jsonData = await data.json();
-        dispatch(addTopRatedMovie(jsonData));
+        try {
+            const data = await fetch(TOP_RATED_MOVIES,options);
+            const jsonData = await data.json();
+            dispatch(addTopRatedMovie(jsonData));
+        } catch (error) {
+            console.log(error);
+        }
     }
     
     useEffect(()=>{

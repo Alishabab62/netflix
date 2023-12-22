@@ -7,9 +7,13 @@ import { addPopularMovie } from "../utils/moviesSlice";
 const usePopularMovies = () =>{
     const dispatch = useDispatch();
     const getPopularMovies = async () =>{
-        const data = await fetch(POPULAR_MOVIES,options);
-        const jsonData = await data.json();
-        dispatch(addPopularMovie(jsonData));
+        try {
+            const data = await fetch(POPULAR_MOVIES,options);
+            const jsonData = await data.json();
+            dispatch(addPopularMovie(jsonData));
+        } catch (error) {
+            console.log(error);
+        }
     }
     
     useEffect(()=>{

@@ -7,9 +7,13 @@ import {   addUpComingMovie } from "../utils/moviesSlice";
 const useUpComingMovies = () =>{
     const dispatch = useDispatch();
     const getUpComingMovies = async () =>{
-        const data = await fetch(UPCOMING_MOVIES,options);
-        const jsonData = await data.json();
-        dispatch(addUpComingMovie(jsonData));
+        try {
+            const data = await fetch(UPCOMING_MOVIES,options);
+            const jsonData = await data.json();
+            dispatch(addUpComingMovie(jsonData));
+        } catch (error) {
+            console.log(error);
+        }
     }
     
     useEffect(()=>{

@@ -9,11 +9,14 @@ const useAllMoviesVideos = (id) =>{
     const [movieId] = useState(id);
     const dispatch = useDispatch();
     const getAllMoviesVideos = async (id) =>{
-        const url = "https://api.themoviedb.org/3/movie/"+movieId+"/videos?language=en-US";
+        try {
+            const url = "https://api.themoviedb.org/3/movie/"+movieId+"/videos?language=en-US";
         const data = await fetch(url,options);
         const jsonData = await data.json();
         dispatch(addAllMoviesVideos(jsonData))
-        // console.log(jsonData);
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(()=>{

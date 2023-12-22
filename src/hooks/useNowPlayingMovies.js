@@ -8,9 +8,13 @@ const useNowPlayingMovies = ()=>{
     const dispatch = useDispatch();
 
     const getNowPlayingMovies = async () => {
-        const data = await fetch(NOW_PLAYING_URL,options);
-        const jsonData = await data.json();
-        dispatch(addNowPlayingMovies(jsonData))
+        try {
+            const data = await fetch(NOW_PLAYING_URL,options);
+            const jsonData = await data.json();
+            dispatch(addNowPlayingMovies(jsonData))
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     useEffect(()=>{

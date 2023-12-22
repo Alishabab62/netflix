@@ -1,5 +1,4 @@
 export const validationCheckSignIn = (email,password)=>{
-    console.log(email,password);
     const isEmailValid = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(email);
     const isPasswordValid = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*()\-+.]).{6,20}$/.test(password);
 

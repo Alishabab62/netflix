@@ -7,9 +7,13 @@ import {   addTrendingMovie } from "../utils/moviesSlice";
 const useTrendingMovies = () =>{
     const dispatch = useDispatch();
     const getTrendingMovies = async () =>{
-        const data = await fetch(TRENDING_MOVIES,options);
-        const jsonData = await data.json();
-        dispatch(addTrendingMovie(jsonData));
+        try {
+            const data = await fetch(TRENDING_MOVIES,options);
+            const jsonData = await data.json();
+            dispatch(addTrendingMovie(jsonData));
+        } catch (error) {
+            console.error(error);
+        }
     }
     
     useEffect(()=>{
