@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
-import logo from "../assests/Netflix_Logo_PMS.png"
+// import logo from "../assests/Netflix_Logo_PMS.png"
+import logo from "../assests/Shabab.png"
 import { onAuthStateChanged, signOut } from 'firebase/auth';
 import { auth } from '../utils/firebase';
 import { useNavigate } from 'react-router-dom';
@@ -45,7 +46,7 @@ const Header = () => {
   return (
     <div className='absolute bg-gradient-to-b from-black w-full z-10 flex justify-between items-center md:px-10 px-1 md:pt-1 pt-2'>
         <img src={logo} alt='logo' className='md:w-44 w-20 cursor-pointer' onClick={()=>navigate("/")}/>
-        {user &&  <div className='text-white flex items-center font-bold'><button onClick={handleGPT} className='bg-red-500 md:px-4 px-2 md:py-2 py-1 rounded-lg'>{gpt.toggleGpt ? "Home Page" : "GPT Search"}</button> <p className='mx-3'>{user.displayName} </p><button className='bg-red-500 md:px-4 px-2 md:py-2 py-1 rounded-lg' onClick={handleSignOut}>Sign Out</button></div>}
+        {user &&  <div className='text-white flex items-center font-bold'><button onClick={handleGPT} className='bg-red-500 md:px-4 px-[5px] md:py-2 py-1 rounded-md text-sm'>{gpt.toggleGpt ? "Home Page" : "GPT Search"}</button> <p className='md:mx-3 mx-2'>{user.displayName} </p><button className='bg-red-500 md:px-4 px-[5px] md:py-2 py-1 rounded-md text-sm' onClick={handleSignOut}>Sign Out</button></div>}
     </div>
   )
 }

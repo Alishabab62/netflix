@@ -11,6 +11,6 @@ export const options = {
   export const TOP_RATED_MOVIES = "https://api.themoviedb.org/3/movie/top_rated";
   export const UPCOMING_MOVIES = "https://api.themoviedb.org/3/movie/upcoming";
   export const TRENDING_MOVIES = "https://api.themoviedb.org/3/trending/movie/day";
-  export const AI_KEY = "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"
+  export const AI_KEY = "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"
 
   export const IMAGE_CDN_LINK = "https://image.tmdb.org/t/p/w300/";

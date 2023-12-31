@@ -8,7 +8,7 @@ const VideoTitle = ({ title, des,id }) => {
   }
   return (
     <div className="w-full md:h-[550px] h-[250px]  absolute text-white bg-gradient-to-r from-black">
-      <div className='relative md:top-[150px] top-[60px] md:pl-20 pl-4'>
+      <div className='relative md:top-[150px] top-[60px] h-[200px] md:pl-20 pl-4'>
           <h1 className='md:text-2xl text-sm font-bold'>{title}</h1>
           <p className='md:w-1/4 w-3/4 mt-1 md:text-lg text-xs'>{des}</p>
           <div className='mt-2'>

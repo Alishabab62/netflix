@@ -7,9 +7,9 @@ const VideoBackGround = ({ id }) => {
     const data = useSelector((store) => store.movies?.trailerMovie);
     
     return (
-      <div className="w-full md:h-[550px] h-[250px]">
+      <div className="w-full md:h-[550px] h-[300px]">
         <iframe
-          className='w-full md:h-[550px] h-[250px]'
+          className='w-full md:h-[550px] h-[300px]'
           src={"https://www.youtube.com/embed/" + data?.key +"?controls = 0 &autoplay=1&mute=1&showinfo=0&allow=autoplay"}
           title="YouTube video player"
           

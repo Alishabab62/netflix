@@ -10,6 +10,7 @@ const ViewPage = () => {
     const movieDetail = useMovieDetails(id);
     const data = useSelector(store => store.movies);
     if(!movieDetail) return;
+    console.log(movieDetail)
     const {original_title,release_date,overview,revenue,tagline,vote_average,vote_count,genres,budget} = movieDetail;
 
     if(!data?.allVideos) return
